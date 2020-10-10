@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Tinder Cats</string>
+    <string name="likes">%1$d likes</string>
+</resources>

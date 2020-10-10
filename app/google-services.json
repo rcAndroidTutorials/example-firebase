@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "996539913839",
+    "firebase_url": "https://predemo-firebase-realtime.firebaseio.com",
+    "project_id": "predemo-firebase-realtime",
+    "storage_bucket": "predemo-firebase-realtime.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996539913839:android:9e60a2b8b9d44c45eadf9a",
+        "android_client_info": {
+          "package_name": "com.youtube.firebaserealtime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996539913839-avihrstksaanjepv3855qm0p2k1lquka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdD_J6zpCy3rJoRjJFKr8hs3BMkg6eeY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996539913839-avihrstksaanjepv3855qm0p2k1lquka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
