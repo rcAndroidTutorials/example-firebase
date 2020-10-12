@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "996539913839",
-    "firebase_url": "https://predemo-firebase-realtime.firebaseio.com",
-    "project_id": "predemo-firebase-realtime",
-    "storage_bucket": "predemo-firebase-realtime.appspot.com"
+    "project_number": "911974862218",
+    "firebase_url": "https://proyecto-gatitos-b39ac.firebaseio.com",
+    "project_id": "proyecto-gatitos-b39ac",
+    "storage_bucket": "proyecto-gatitos-b39ac.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:996539913839:android:9e60a2b8b9d44c45eadf9a",
+        "mobilesdk_app_id": "1:911974862218:android:152ea70fefd2a8b3e1cc73",
         "android_client_info": {
           "package_name": "com.youtube.firebaserealtime"
         }
       },
       "oauth_client": [
         {
-          "client_id": "996539913839-avihrstksaanjepv3855qm0p2k1lquka.apps.googleusercontent.com",
+          "client_id": "911974862218-uvqq1j0m62epe60365p5uhqfdqd0h0g6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDdD_J6zpCy3rJoRjJFKr8hs3BMkg6eeY8"
+          "current_key": "AIzaSyCUOd-lb7JIVFjUnotFOhsoKHV9Y8er6mg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "996539913839-avihrstksaanjepv3855qm0p2k1lquka.apps.googleusercontent.com",
+              "client_id": "911974862218-uvqq1j0m62epe60365p5uhqfdqd0h0g6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
