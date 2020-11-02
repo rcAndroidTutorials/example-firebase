@@ -3,10 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    app:startDestination="@id/catsFragment">
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.youtube.firebaserealtime.presentation.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_to_login"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_to_cats"
+            app:destination="@id/catsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/catsFragment"
         android:name="com.youtube.firebaserealtime.presentation.cats.CatsFragment"
         android:label="CatsFragment"
-        tools:layout="@layout/fragment_cats"/>
+        tools:layout="@layout/fragment_cats">
+        <action
+            android:id="@+id/action_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.youtube.firebaserealtime.presentation.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_to_cats"
+            app:destination="@id/catsFragment" />
+        <action
+            android:id="@+id/action_to_signUp"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.youtube.firebaserealtime.presentation.signup.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_signup"/>
 </navigation>

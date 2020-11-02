@@ -15,9 +15,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.airbnb.lottie.LottieAnimationView
 import com.youtube.firebaserealtime.R
+import com.youtube.firebaserealtime.extensions.popAnimation
+import com.youtube.firebaserealtime.extensions.slideAnimation
 import com.youtube.firebaserealtime.extensions.zipLiveData
 
 class CatsFragment : Fragment() {
@@ -74,6 +77,12 @@ class CatsFragment : Fragment() {
             likeLD?.observe(viewLifecycleOwner, Observer {
                 tvLikesCounter.text = getString(R.string.likes, it)
             })
+            goToLoginLD.observe(viewLifecycleOwner) {
+                findNavController().navigate(
+                    CatsFragmentDirections.actionToLogin(),
+                    popAnimation(R.id.catsFragment).build()
+                )
+            }
         }
     }
     override fun onResume() {
@@ -113,5 +122,8 @@ class CatsFragment : Fragment() {
             vpCats.currentItem = vpCats.currentItem.plus(1)
         }
         likeButton.setOnClickListener { viewModel.like() }
+        view.findViewById<ImageButton>(R.id.btLogout).setOnClickListener {
+            viewModel.logout()
+        }
     }
 }

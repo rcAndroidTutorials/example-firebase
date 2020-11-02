@@ -3,11 +3,13 @@ package com.youtube.firebaserealtime.presentation.cats
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.youtube.firebaserealtime.extensions.SingleLiveEvent
 import com.youtube.firebaserealtime.models.Cat
 import com.youtube.firebaserealtime.models.Like
 import com.youtube.firebaserealtime.presentation.cats.uistates.ArrowsState
@@ -21,6 +23,7 @@ internal class CatsViewModel : ViewModel() {
     private val _catNameMLD = MutableLiveData<String>()
     private val _arrowsMLD = MutableLiveData<ArrowsState>()
     private val _animationEndsMLD = MutableLiveData<Int>()
+    private val _goToLogin = SingleLiveEvent<Unit>()
     private var currentPage = 0
     val catsLD: LiveData<List<Cat>>
         get() = _catsMLD
@@ -30,10 +33,15 @@ internal class CatsViewModel : ViewModel() {
         get() = _animationEndsMLD
     val catNameLD: LiveData<String>
         get() = _catNameMLD
+    val goToLoginLD: LiveData<Unit> = _goToLogin
 
     init {
         readCatsOnce()
 //        readCatsAlways()
+    }
+    fun logout() {
+        Firebase.auth.signOut()
+        _goToLogin.call()
     }
     fun changePage(page: Int) {
         currentPage = page
@@ -86,9 +94,11 @@ internal class CatsViewModel : ViewModel() {
         return null
     }
     fun like() {
-        _catsMLD.value?.also {
-            val catID = it[currentPage].id
-            val userID = UUID.randomUUID().toString()
+        val cats = _catsMLD.value
+        val user = Firebase.auth.currentUser
+        if (cats!=null && user!=null) {
+            val catID = cats[currentPage].id
+            val userID = user.uid
             val likesCatRef = database.getReference("likes").child(catID).child(userID)
             val like = Like(userID, catID, currentDate())
             likesCatRef.setValue(like)

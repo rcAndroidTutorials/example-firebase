@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">Tinder Cats</string>
     <string name="likes">%1$d likes</string>
+    <string name="login_username">Enter your username</string>
+    <string name="login_password">Enter your password</string>
+    <string name="login_button">Login</string>
+    <string name="login_success">Success</string>
+    <string name="login_error">The username or password are wrong</string>
+    <string name="login_email">Email is not verified</string>
+    <string name="signup_username">Enter your username</string>
+    <string name="signup_password">Enter your password</string>
+    <string name="signup_password_repeat">Enter your password again</string>
+    <string name="signup_button">Signup</string>
+    <string name="signup_error_username">You should enter a valid username</string>
+    <string name="signup_error_password">You should enter a valid password</string>
+    <string name="signup_error_password_notequals">You should enter the same password twice</string>
+    <string name="signup_success">Sign up success</string>
+    <string name="signup_error">An error has occurred</string>
 </resources>
